@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Happy Ocean</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-mobile-web-app-title" content="Flamenco Dance" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="static/css/main.css" type="text/css" />
+    <link rel="shortcut icon" href="static/favicon.ico" />
+</head>
+<body>
+
+    <script src="static/lib/promise.min.js"></script>
+    <script src="static/lib/phaser.min.js"></script>
+    <script src="static/lib/appwarp.min.js"></script>
+    <script src="static/lib/stats.min.js"></script>
+        <script>
+        // 重写字体的重新分析
+        Phaser.LoaderParser.jsonBitmapFont = function (json, baseTexture, xSpacing, ySpacing) {
+            var data = {
+                font: json.file,
+                size: json['frames'][0]['h'],
+                lineHeight: json['frames'][0]['h'] + ySpacing,
+                chars: {}
+            };
+
+            for (var frame in json.frames) {
+                var letter = json.frames[frame];
+                var charCode = frame.charCodeAt(0);
+                data.chars[charCode] = {
+                    x: parseInt(letter.x, 10),
+                    y: parseInt(letter.y, 10),
+                    width: parseInt(letter.w, 10),
+                    height: parseInt(letter.h, 10),
+                    xOffset: parseInt(letter.offX, 10),
+                    yOffset: parseInt(letter.offY, 10),
+                    xAdvance: parseInt(letter.w, 10) + xSpacing,
+                    kerning: {}
+                };
+            }
+
+            if (json.kernings && json.kernings.kerning) {
+
+                json.kernings.kerning.forEach(
+
+                    function parseKerning(kerning) {
+
+                        data.chars[kerning._second].kerning[kerning._first] = parseInt(kerning._amount, 10);
+
+                    }
+
+                );
+
+            }
+
+            return Phaser.LoaderParser.finalizeBitmapFont(baseTexture, data);
+        }
+
+        // 重写json的分析
+        Phaser.AnimationParser.JSONDataHash = function (game, json) {
+            //  Malformed?
+            if (!json['frames'])
+            {
+                console.warn("Phaser.AnimationParser.JSONDataHash: Invalid Texture Atlas JSON given, missing 'frames' object");
+                console.log(json);
+                return;
+            }
+
+            //  Let's create some frames then
+            var data = new Phaser.FrameData();
+
+            //  By this stage frames is a fully parsed array
+            var frames = json['frames'];
+            var newFrame;
+            var i = 0;
+
+            for (var key in frames)
+            {
+                newFrame = data.addFrame(new Phaser.Frame(
+                    i,
+                    frames[key].x,
+                    frames[key].y,
+                    frames[key].w,
+                    frames[key].h,
+                    key
+                ));
+
+                if (frames[key].trimmed)
+                {
+                    newFrame.setTrim(
+                        frames[key].trimmed,
+                        frames[key].sourceW,
+                        frames[key].sourceH,
+                        frames[key].offX,
+                        frames[key].offY,
+                        frames[key].w,
+                        frames[key].h
+                    );
+                }
+
+                i++;
+            }
+
+            return data;
+        }
+    </script>
+    <app></app>
+    <!-- built files will be auto injected -->
+</body>
+</html>
