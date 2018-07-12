@@ -1,0 +1,84 @@
+{
+	"groups": [
+		{
+			"keys": "totalWin_png,symbols_json,numbers2_png,numbers1_png,currency_json,coin_json,card_json,buttons_json,bg2_png,bg_png,number1_fnt,number1_png,totalWin2_png",
+			"name": "preload"
+		},
+		{
+			"keys": "buttons_json",
+			"name": "test"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/totalWin.png",
+			"type": "image",
+			"name": "totalWin_png"
+		},
+		{
+			"url": "assets/symbols.json",
+			"type": "sheet",
+			"name": "symbols_json",
+			"subkeys": "ace,jack,king,kuang,lantern,lizard,minecar,miner,opal,pick,queen,scat,sign"
+		},
+		{
+			"url": "assets/numbers2.png",
+			"type": "image",
+			"name": "numbers2_png"
+		},
+		{
+			"url": "assets/numbers1.png",
+			"type": "image",
+			"name": "numbers1_png"
+		},
+		{
+			"url": "assets/currency.json",
+			"type": "sheet",
+			"name": "currency_json",
+			"subkeys": "KRW,PHP,RMB,RSD,USD"
+		},
+		{
+			"url": "assets/coin.json",
+			"type": "sheet",
+			"name": "coin_json",
+			"subkeys": "Coin01,Coin03,Coin05,Coin07,Coin09,Coin11,Coin13,Coin15,Coin17,Coin19,Coin21,Coin23"
+		},
+		{
+			"url": "assets/card.json",
+			"type": "sheet",
+			"name": "card_json",
+			"subkeys": "c10,c2,c3,c4,c5,c6,c7,c8,c9,ca,cardback,cj,ck,cq,d10,d2,d3,d4,d5,d6,d7,d8,d9,da,dj,dk,dq,h10,h2,h3,h4,h5,h6,h7,h8,h9,ha,hj,hk,hq,j,j2,s10,s2,s3,s4,s5,s6,s7,s8,s9,sa,sj,sk,sq"
+		},
+		{
+			"url": "assets/buttons.json",
+			"type": "sheet",
+			"name": "buttons_json",
+			"subkeys": "ball,bonus_box,border_red,border_yellow,button-add-disabled,button-add-normal,button-add-pressed,button-arrows-disabled,button-arrows-normal,button-arrows-pressed,button-autoplay-disabled,button-autoplay-normal,button-autoplay-pressed,button-cancel-normal,button-cancel-pressd,button-close-disabled,button-close-normal,button-close-pressed,button-draw-disabled,button-draw-normal,button-draw-pressed,button-help-disabled,button-help-normal,button-help-pressed,button-hold-normal,button-hold-pressed,button-minus-disabled,button-minus-normal,button-minus-pressed,button-redraw-disabled,button-redraw-normal,button-redraw-pressed,button-stop-disabled,button-stop-normal,button-stop-pressed,button-vol0-disabled,button-vol0-normal,button-vol0-pressed,button-vol1-disabled,button-vol1-normal,button-vol1-pressed,button-vol2-disabled,button-vol2-normal,button-vol2-pressed,help-bg,hold_tips,spins_box"
+		},
+		{
+			"url": "assets/bg2.png",
+			"type": "image",
+			"name": "bg2_png"
+		},
+		{
+			"url": "assets/bg.png",
+			"type": "image",
+			"name": "bg_png"
+		},
+		{
+			"url": "assets/number1.fnt",
+			"type": "font",
+			"name": "number1_fnt"
+		},
+		{
+			"url": "assets/number1.png",
+			"type": "image",
+			"name": "number1_png"
+		},
+		{
+			"url": "assets/test/totalWin.png",
+			"type": "image",
+			"name": "totalWin2_png"
+		}
+	]
+}

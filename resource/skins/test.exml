@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="test" width="400" height="300" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image source="buttons_json.ball" width="144" height="161" x="141" y="66" visible="false"/>
+		<e:BitmapLabel id="sd" x="45" y="227" font="number1_fnt" text="123" visible="false"/>
+		<e:Component width="20" height="20" x="107" y="117"/>
+		<e:DataGroup width="200" height="200" x="89" y="37">
+			<e:ArrayCollection>
+				<e:Array>
+					<e:Object vrticalSize="1"/>
+					<e:Object vrticalSize="null"/>
+				</e:Array>
+			</e:ArrayCollection>
+		</e:DataGroup>
+	</e:Group>
+</e:Skin>
